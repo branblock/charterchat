@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('charterChat')
+		.module('CharterChat')
 		.factory('chatService', chatService);
 
 	function chatService($firebaseAuth, $firebaseObject, $firebaseArray, $state, rootRef){
@@ -21,7 +21,7 @@
 							name: newFullName,
 							email: newEmail,
 						});
-						$state.go('profile');
+						$state.go('home');
 				}).catch(function(error){
 						switch (error.code) {
 				      case "EMAIL_TAKEN":
@@ -37,10 +37,10 @@
 			},
 			loginUser: function(email, password){
 				authUser.$authWithPassword({
-					"email": email,
-					"password": password
+					email: email,
+					password: password
 				}).then (function(authData){
-					$state.go('profile');
+					$state.go('home');
 				}).catch(function(error){
 					console.log(error);
 				});
@@ -65,7 +65,7 @@
 					newPassword: newPassword
 				}).then(function(){
 					alert('Password changed.');
-					$state.go('profile');
+					$state.go('home');
 				}).catch(function(error){
 					console.log(error);
 				});
@@ -77,7 +77,7 @@
 					password: password
 				}).then(function(){
 						alert('Email changed.');
-						$state.go('profile');
+						$state.go('home');
 				}).catch(function(error){
 					console.log(error);
 				});

@@ -1,12 +1,7 @@
-<ion-view view-title="Rooms">
-  <ion-nav-buttons side="right">
-    <button class="button icon-right" ng-click="createRoom()">
-      <i class="ion ion-plus"></i>
-    </button>
-  </ion-nav-buttons>
+<ion-view view-title="All Rooms">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-icon-right" ng-repeat="room in rooms | orderBy:'-id'" type="item-text-wrap"  ui-sref="room({roomId: room.$id})">
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="room in rooms | orderBy:'-id'" type="item-text-wrap" ui-sref="room({roomId: room.$id})">
         <h3>{{room.name}}</h3>
         <i class="icon ion-chevron-right icon-accessory"></i>
         <ion-option-button class="button-assertive" ng-click="deleteRoom(room)">
@@ -15,7 +10,7 @@
       </ion-item>
     </ion-list>
   </ion-content>
-  <ion-footer-bar class="bar-footer bar-assertive">
+  <ion-footer-bar class="bar-footer bar-stable">
     <input class="footerInput" type="text" placeholder="Add a room" ng-model="roomName">
     <button class="button icon-left ion-plus" ng-click="createRoom()"></button>
   </ion-footer-bar>

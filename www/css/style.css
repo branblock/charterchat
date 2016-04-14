@@ -1,67 +1,19 @@
 /* Empty. Add your own CSS if you like */
-.center-text {
-	text-align: center;
+
+/*
+  Buttons CSS
+*/
+
+.bar-stable .button {
+  color: #387ef5;
 }
 
-.right-text {
-	text-align: right;
+.bar-stable .button.button-clear {
+  font-size: 14px;
 }
 
-.left-text {
-	text-align: left;
-}
-
-.finishedEvent {
-	color: white;
-	background-color: gray;
-}
-
-.no-padding {
-	padding: 0 !important;
-}
-
-.no-margin {
-	margin: 0 !important;
-}
-
-.no-border {
-  border: 0 !important;
-}
-
-.margin {
-	margin: 5px !important;
-}
-
-.margin-right {
-	margin-right: 5px !important;
-}
-
-.margin-left {
-	margin-left: 5px !important;
-}
-
-.margin-top {
-  margin-top: 5px !important;
-}
-
-.margin-bottom {
-  margin-bottom: 5px !important;
-}
-
-.padding-right {
-  padding-right: 5px !important;
-}
-
-.padding-left {
-  padding-left: 5px !important;
-}
-
-.padding-top {
-  padding-top: 5px !important;
-}
-
-.padding-bottom {
-  padding-bottom: 5px !important;
+.bar .button.back-button, .bar button.back-button {
+  font-weight: 500;
 }
 
 /*
@@ -79,7 +31,7 @@ label.item.has-error {
 }
 
 .error {
-  padding: 8px 8px;
+  padding: 8px 0;
   font-family: "Arial Black", Gadget, sans-serif;
   font-size: 10px;
   text-transform: uppercase;
@@ -94,7 +46,7 @@ label.item.has-error {
 }
 
 .last-error-container > .error {
-  padding: 10px 16px 0;
+  padding: 10px 16px 10px 0;
 }
 
 .has-errors {
@@ -106,7 +58,7 @@ label.item.has-error {
 }
 
 /*
-	Footer inputs
+	Footer CSS
 */
 
 .footerInput {
@@ -114,6 +66,7 @@ label.item.has-error {
 }
 
 input[type="text"] {
+  border: 1px solid #ccc;
   border-radius: 4px;
   padding-left: 10px;
 }
