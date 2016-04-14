@@ -1,0 +1,33 @@
+<ion-view view-title="Change your Email">
+	<ion-content class="has-header padding">
+
+		<form name="changeEmailForm" novalidate="" ng-submit="changeEmail(changeEmailForm)" class="list list-inset">
+			<div class="item item-input" ng-class="{ 'has-errors' : changeEmailForm.newEmail.$invalid && changeEmailForm.$submitted, 'no-errors' : changeEmailForm.newEmail.$valid && changeEmailForm.$submitted}">
+				<input type="email" name="newEmail" placeholder="New email" ng-model="data.newEmail" required />
+			</div>
+
+			<div class="error-container last-error-container" ng-show="changeEmailForm.newEmail.$error && changeEmailForm.$submitted" ng-messages="changeEmailForm.newEmail.$error">
+				<div class="error" ng-message="required">
+		      <i class="ion-information-circled"></i>
+		      New email is required.
+		    </div>
+			</div>
+
+			<div class="item item-input" ng-class="{ 'has-errors' : changeEmailForm.password.$invalid && changeEmailForm.$submitted, 'no-errors' : changeEmailForm.password.$valid && changeEmailForm.$submitted}">
+				<input type="password" name="password" placeholder="Your password" ng-model="data.password" required />
+			</div>
+
+			<div class="error-container last-error-container" ng-show="changeEmailForm.password.$error && changeEmailForm.$submitted" ng-messages="changeEmailForm.password.$error">
+				<div class="error" ng-message="required">
+		      <i class="ion-information-circled"></i>
+		      Password is required.
+		    </div>
+			</div>
+
+			<button class="button button-block button-positive" ng-disabled="changeEmailForm.$invalid && changeEmailForm.$submitted">
+				&nbsp;Change email
+			</button>
+		</form>
+
+	</ion-content>
+</ion-view>

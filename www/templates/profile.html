@@ -1,0 +1,33 @@
+<ion-view view-title="Home" hide-back-button="true">
+	<ion-content class="has-header padding">
+
+	<h4 class="text-center">{{userProfile.name}}</h4>
+
+	<div class="list card">
+    <div class="item item-divider">Navigation</div>
+		<a href="#/rooms" class="item item-icon-left">
+      <i class="icon ion-chatboxes"></i>
+      All chatrooms
+    </a>
+	</div>
+
+	<div class="list card">
+		<div class="item item-divider">Account Management</div>
+    <a href="#/changeEmail" class="item item-icon-left">
+      <i class="icon ion-email"></i>
+      Change your email
+    </a>
+
+    <a href="#/changePassword" class="item item-icon-left">
+      <i class="icon ion-lock-combination"></i>
+      Change your password
+    </a>
+
+    <div ng-click="logoutUser()" class="item item-icon-left">
+      <i class="icon ion-log-out"></i>
+      Log Out
+    </div>
+  </div>
+
+	</ion-content>
+</ion-view>
