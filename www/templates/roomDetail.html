@@ -5,14 +5,16 @@
     </h5>
     <ion-list>
       <ion-item class="item-text-wrap" ng-repeat="message in messages">
-          <p style="font-size: 13px; font-weight: 700;">{{message.username}}</p>
-          <h2 style="font-size: 14px; font-weight: 700;">{{message.content}}</h2>
-          <p style="font-size: 11px; font-weight: 500;">{{message.sentAt | date:'shortDate'}} at {{message.sentAt | date:'shortTime'}}</p>
+        <p>
+          <span style="color: #000; font-size: 13px">{{message.username}}</span>
+          <span style="font-size: 12px; font-style:italic; margin-left: 5px" am-time-ago="message.sentAt"></span>
+        </p>
+        <p style="color: #000; font-size: 15px; font-weight: 700;">{{message.content}}</p>
       </ion-item>
     </ion-list>
   </ion-content>
-  <ion-footer-bar class="bar-footer bar-assertive">
-    <input class="footerInput" type="text" placeholder="Message" ng-model="newMessage">
+  <ion-footer-bar class="bar-footer bar-stable">
+    <input class="footerInput" type="text" placeholder="New message" ng-model="newMessage">
     <button class="button icon-left ion-paper-airplane" ng-click="sendMessage()"></button>
   </ion-footer-bar>
 </ion-view>

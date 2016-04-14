@@ -2,11 +2,11 @@
 	'use strict';
 
 	angular
-		.module('charterChat')
+		.module('CharterChat')
 		.controller('SignupCtrl', SignupCtrl)
 		.controller('LoginCtrl', LoginCtrl)
     .controller('PasswordResetCtrl', PasswordResetCtrl)
-    .controller('ProfileCtrl', ProfileCtrl)
+    .controller('HomeCtrl', HomeCtrl)
     .controller('RoomsListCtrl', RoomsListCtrl)
     .controller('RoomDetailCtrl', RoomDetailCtrl)
 
@@ -14,7 +14,7 @@
 	SignupCtrl.$inject = ['$scope', '$state', 'chatService'];
 	LoginCtrl.$inject = ['$scope', '$state', 'chatService'];
   PasswordResetCtrl.$inject = ['$scope', 'chatService'];
-  ProfileCtrl.$inject = ['$scope', 'currentAuth', 'chatService', '$state'];
+  HomeCtrl.$inject = ['$scope', 'currentAuth', 'chatService', '$state'];
   RoomsListCtrl.$inject = ['$scope', '$ionicPopup', 'chatService'];
   RoomDetailCtrl.$inject = ['$scope', '$stateParams', '$ionicHistory', 'chatService', 'currentAuth'];
 
@@ -57,8 +57,8 @@
     };
   }
 
-	//Profile controller (main view)
-  function ProfileCtrl($scope, currentAuth, chatService, $state){
+	//Home controller
+  function HomeCtrl($scope, currentAuth, chatService, $state){
     $scope.data = {};
     $scope.userProfile = chatService.userProfileData(currentAuth.uid);
 
