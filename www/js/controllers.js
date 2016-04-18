@@ -14,7 +14,7 @@
 	SignupCtrl.$inject = ['$scope', '$state', 'chatService'];
 	LoginCtrl.$inject = ['$scope', '$state', 'chatService'];
   PasswordResetCtrl.$inject = ['$scope', 'chatService'];
-  HomeCtrl.$inject = ['$scope', 'currentAuth', 'chatService', '$state'];
+  HomeCtrl.$inject = ['$scope', 'currentAuth', 'chatService', '$state', '$stateParams'];
   RoomsListCtrl.$inject = ['$scope', '$ionicPopup', 'chatService'];
   RoomDetailCtrl.$inject = ['$scope', '$stateParams', '$ionicHistory', 'chatService', 'currentAuth'];
 
@@ -58,9 +58,11 @@
   }
 
 	//Home controller
-  function HomeCtrl($scope, currentAuth, chatService, $state){
+  function HomeCtrl($scope, currentAuth, chatService, $state, $stateParams){
     $scope.data = {};
     $scope.userProfile = chatService.userProfileData(currentAuth.uid);
+		$scope.users = chatService.allUsers();
+    $scope.user = chatService.getUser($stateParams.userId);
 
     $scope.logoutUser = function(){
       chatService.logoutUser();

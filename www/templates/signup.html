@@ -4,13 +4,12 @@
 		<form name="signupForm" novalidate="" ng-submit="createUser(signupForm)" class="list list-inset">
 
 			<div class="item item-input item-stacked-div" ng-class="{ 'has-errors' : signupForm.fullName.$invalid && signupForm.$submitted, 'no-errors' : signupForm.fullName.$valid && signupForm.$submitted}">
-				<input type="text" name="fullName" placeholder="Username" ng-model="data.fullName" required>
+				<input type="text" name="fullName" placeholder="Full name (e.g., 'John Smith')" ng-model="data.fullName" required>
 			</div>
 
 			<div class="error-container" ng-show="signupForm.fullName.$error && signupForm.$submitted" ng-messages="signupForm.fullName.$error">
 	      <div class="error" ng-message="required">
-		      <i class="ion-information-circled"></i>
-		      This field is required.
+		      Full name is required.
 		    </div>
 	    </div>
 
@@ -20,12 +19,10 @@
 
 			<div class="error-container" ng-show="signupForm.email.$error && signupForm.$submitted" ng-messages="signupForm.email.$error">
 	      <div class="error" ng-message="required">
-		      <i class="ion-information-circled"></i>
-		      This field is required!
+		      Email is required.
 		    </div>
 	      <div class="error" ng-show="signupForm.email.$invalid && !signupForm.email.$pristine">
-		      <i class="ion-information-circled"></i>
-		      This needs to be a valid email address
+		      Valid email is required.
 		    </div>
 	    </div>
 
@@ -35,8 +32,7 @@
 
 			<div class="error-container" ng-show="signupForm.password.$error && signupForm.$submitted" ng-messages="signupForm.password.$error">
 	      <div class="error" ng-message="required">
-		      <i class="ion-information-circled"></i>
-		      This field is required!
+		      Password is required.
 		    </div>
 	    </div>
 

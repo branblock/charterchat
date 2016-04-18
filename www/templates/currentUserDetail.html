@@ -1,0 +1,18 @@
+<ion-view view-title="{{user.name}}">
+  <ion-content>
+
+	<ion-list>
+    <ion-item class="item item-divider positive">User Information</ion-item>
+    <ion-item><b>Display Name:</b>&nbsp;{{user.name}}</ion-item>
+    <ion-item><b>Email:</b>&nbsp;{{user.email}}</ion-item>
+    <ion-item class="item item-divider positive">Account Management</ion-item>
+    <a ui-sref="changeEmail" class="item item-icon-left">
+      <i class="icon ion-email"></i>Change your email
+    </a>
+    <a ui-sref="changePassword" class="item item-icon-left">
+      <i class="icon ion-lock-combination"></i>Change your password
+    </a>
+  </ion-list>
+
+  </ion-content>
+</ion-view>

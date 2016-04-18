@@ -1,0 +1,10 @@
+<ion-view view-title="Users">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="user in users | orderBy: 'name'" type="item-text-wrap" ui-sref="user({userId: user.$id})">
+        <h3>{{user.name}}</h3>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

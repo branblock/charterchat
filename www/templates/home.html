@@ -1,30 +1,22 @@
 <ion-view view-title="Home" hide-back-button="true">
-	<ion-content class="has-header padding">
+	<ion-content class="has-header">
 
-	<h4 class="text-center" style="font-weight: 700">{{userProfile.name}}</h4>
-
-	<div class="list card">
-    <div class="item item-divider positive">Navigation</div>
-		<a href="#/rooms" class="item item-icon-left">
-			<i class="icon ion-chatboxes"></i>All chatrooms
+	<ion-list>
+		<ion-item class="item item-divider positive text-center">{{userProfile.name}}</ion-item>
+		<a ui-sref="rooms" class="item item-icon-left">
+			<i class="icon ion-chatboxes"></i>Chat rooms
     </a>
-	</div>
-
-	<div class="list card">
-		<div class="item item-divider positive">Account Management</div>
-    <a href="#/changeEmail" class="item item-icon-left">
-      <i class="icon ion-email"></i>Change your email
+		<a ui-sref="users" class="item item-icon-left">
+			<i class="icon ion-ios-people"></i>Users
     </a>
-
-    <a href="#/changePassword" class="item item-icon-left">
-      <i class="icon ion-lock-combination"></i>Change your password
-    </a>
-
-    <div ng-click="logoutUser()" class="item item-icon-left">
+		<a href="#/users/{{userProfile.$id}}" class="item item-icon-left">
+			<i class="icon ion-person"></i>My Account
+		</a>
+    <a ng-click="logoutUser()" class="item item-icon-left">
       <i class="icon ion-log-out"></i>
       Log Out
-    </div>
-  </div>
+    </a>
+  </ion-list>
 
 	</ion-content>
 </ion-view>
