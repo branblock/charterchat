@@ -9,6 +9,8 @@
     var rooms = $firebaseArray(rootRef.child('rooms'));
     var messages = $firebaseArray(rootRef.child('messages'));
     var authUser = $firebaseAuth(rootRef);
+		var users = $firebaseArray(rootRef.child('userProfile'));
+		var currentUser = rootRef.getAuth();
 
 		return {
 			signupEmail: function(newEmail, newPassword, newFullName){
@@ -54,6 +56,7 @@
 					email: resetEmail
 				}).then(function(){
 					console.log('Password reset email sent.');
+					$state.go('login');
 				}).catch(function(error){
 					console.log(error);
 				});
@@ -64,7 +67,6 @@
 					oldPassword: oldPassword,
 					newPassword: newPassword
 				}).then(function(){
-					alert('Password changed.');
 					$state.go('home');
 				}).catch(function(error){
 					console.log(error);
@@ -76,8 +78,7 @@
 					newEmail: newEmail,
 					password: password
 				}).then(function(){
-						alert('Email changed.');
-						$state.go('home');
+					$state.go('home');
 				}).catch(function(error){
 					console.log(error);
 				});
@@ -86,7 +87,16 @@
 				var userProfileRef = rootRef.child('userProfile').child(userId);
 				return $firebaseObject(userProfileRef);
 			},
-      allRooms: function() {
+			allUsers: function() {
+        return users;
+			},
+			getUser: function(userId) {
+        return users.$getRecord(userId);
+      },
+			currentUser: function() {
+				return currentUser;
+			},
+			allRooms: function() {
         return rooms;
 			},
       getRoom: function(roomId) {

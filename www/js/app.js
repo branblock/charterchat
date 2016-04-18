@@ -81,6 +81,39 @@
           },
         })
 
+        .state('users', {
+          url: '/users',
+          templateUrl: 'templates/usersList.html',
+          controller: 'HomeCtrl',
+          resolve: {
+            'currentAuth': ['Auth', function(Auth){
+              return Auth.$requireAuth();
+            }]
+          },
+        })
+
+        .state('currentUser', {
+          url: '/users/:userId',
+          templateUrl: 'templates/currentUserDetail.html',
+          controller: 'HomeCtrl',
+          resolve: {
+            'currentAuth': ['Auth', function(Auth){
+              return Auth.$requireAuth();
+            }]
+          }
+        })
+
+        .state('user', {
+          url: '/users/:userId',
+          templateUrl: 'templates/userDetail.html',
+          controller: 'HomeCtrl',
+          resolve: {
+            'currentAuth': ['Auth', function(Auth){
+              return Auth.$requireAuth();
+            }]
+          }
+        })
+
         .state('rooms', {
           url: '/rooms',
           templateUrl: 'templates/roomsList.html',

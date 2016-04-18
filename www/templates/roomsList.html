@@ -1,4 +1,4 @@
-<ion-view view-title="All Rooms">
+<ion-view view-title="Chat Rooms">
   <ion-content>
     <ion-list>
       <ion-item class="item-remove-animate item-icon-right" ng-repeat="room in rooms | orderBy:'-id'" type="item-text-wrap" ui-sref="room({roomId: room.$id})">
@@ -11,7 +11,7 @@
     </ion-list>
   </ion-content>
   <ion-footer-bar class="bar-footer bar-stable">
-    <input class="footerInput" type="text" placeholder="Add a room" ng-model="roomName">
-    <button class="button icon-left ion-plus" ng-click="createRoom()"></button>
+    <input class="footer-input" id="footer-text" type="text" placeholder="Add a room" ng-model="roomName">
+    <button class="button icon-left ion-plus-circled" ng-click="createRoom()"></button>
   </ion-footer-bar>
 </ion-view>

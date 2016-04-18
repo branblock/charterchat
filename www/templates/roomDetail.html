@@ -6,15 +6,15 @@
     <ion-list>
       <ion-item class="item-text-wrap" ng-repeat="message in messages">
         <p>
-          <span style="color: #000; font-size: 13px">{{message.username}}</span>
-          <span style="font-size: 12px; font-style:italic; margin-left: 5px" am-time-ago="message.sentAt"></span>
+          <span style="color: #000; font-size: 14px">{{message.username}}</span>
+          <span style="font-size: 13px; float: right; font-style:italic" am-time-ago="message.sentAt"></span>
         </p>
         <p style="color: #000; font-size: 15px; font-weight: 700;">{{message.content}}</p>
       </ion-item>
     </ion-list>
   </ion-content>
   <ion-footer-bar class="bar-footer bar-stable">
-    <input class="footerInput" type="text" placeholder="New message" ng-model="newMessage">
-    <button class="button icon-left ion-paper-airplane" ng-click="sendMessage()"></button>
+    <input class="footer-input" id="footer-text" type="text" placeholder="Message" ng-model="newMessage">
+    <button class="button icon-left ion-plus-circled" ng-click="sendMessage()"></button>
   </ion-footer-bar>
 </ion-view>

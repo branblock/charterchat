@@ -61,11 +61,11 @@ label.item.has-error {
 	Footer CSS
 */
 
-.footerInput {
+.footer-input {
   width: 100% !important;
 }
 
-input[type="text"] {
+#footer-text {
   border: 1px solid #ccc;
   border-radius: 4px;
   padding-left: 10px;

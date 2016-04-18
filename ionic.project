@@ -1,4 +1,8 @@
 {
   "name": "charterchat",
-  "app_id": "a3b2f045"
+  "app_id": "a3b2f045",
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }
