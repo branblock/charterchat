@@ -1,0 +1,46 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
+# All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
+# can also be listed using the `fastlane actions` command
+
+# Change the syntax highlighting to Ruby
+# All lines starting with a # are ignored when running `fastlane`
+
+# If you want to automatically update fastlane if a new version is available:
+# update_fastlane
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version "1.87.0"
+
+default_platform :ios
+
+  platform :ios do
+    desc "Creating a code signing certificate and provisioning profile"
+    lane :provision do
+      produce(
+        app_name: 'charterchatbranblock@gmail.com',
+        language: 'English',
+        app_version: '1.0',
+        sku: '123abc'
+      )
+      cert
+      sigh(force: true)
+    end
+
+    error do |lane, exception|
+    # This block is called, if there was an error running a specific lane.
+    end
+
+    desc "Create ipa"
+    lane :build do
+      gym
+    end
+  end
+
+
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
+
+# fastlane reports which actions are used
+# No personal data is recorded. Learn more at https://github.com/fastlane/enhancer
